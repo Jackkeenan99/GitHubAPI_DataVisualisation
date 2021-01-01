@@ -15,19 +15,19 @@ const ProfileDetails = (props) => {
                  style={imgStye}/> : null }
         </div>
         <div>
-          {props.infoclean.name ? <div><p>Name:</p><p>{props.infoclean.name}</p></div> : null }
+          {props.infoclean.name ? <div><p>Name: {props.infoclean.name}</p></div> : null }
         </div>
         <div>
-          {props.infoclean.bio ? <div><p>Bio:</p><p>{props.infoclean.bio}</p></div> : null }
+          {props.infoclean.bio ? <div><p>Bio: {props.infoclean.bio}</p></div> : null }
         </div>
         <div>
-          {props.infoclean.public_repos ? <div><p>Public Repos:</p><p>{props.infoclean.public_repos}</p></div> : null }
+          {props.infoclean.public_repos ? <div><p>Public Repos: {props.infoclean.public_repos}</p></div> : null }
         </div>
         <div>
-          {props.infoclean.followers ? <div><p>Followers:</p><p>{props.infoclean.followers}</p></div> : null }
+          {props.infoclean.followers ? <div><p>Followers: {props.infoclean.followers}</p></div> : null }
         </div>
         <div>
-          {props.infoclean.following ? <div><p>Following:</p><p>{props.infoclean.following}</p></div> : null }
+          {props.infoclean.following ? <div><p>Following: {props.infoclean.following}</p></div> : null }
         </div>
         <div>
           {props.infoclean.html_url ? <div><p><a href={props.infoclean.html_url} target="_blank">View on GitHub</a></p></div> : null }

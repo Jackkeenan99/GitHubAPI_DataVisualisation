@@ -67,6 +67,7 @@ render() {
         <hr></hr>
         Starred Repositories:
         <SortedList repitems={this.state.staritems}/>
+    
 </div>
     );
   }
