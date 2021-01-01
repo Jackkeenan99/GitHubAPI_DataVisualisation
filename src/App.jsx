@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Form from './components/Form.jsx';
+import ProfileDetails from './components/ProfileDetails.jsx';
 class App extends Component {
   constructor() {
     super();
     this.state = {
       gitun: 'No username',
-      info: '',
+      infoclean : '',
       formData: {
         username: '',
-      }
-    }
+      },
+}
     this.handleUserFormSubmit = this.handleUserFormSubmit.bind(this);
     this.handleFormChange= this.handleFormChange.bind(this);
   }
 handleUserFormSubmit(event) {
     event.preventDefault();
-    axios.get('https://api.github.com/users/'+this.state.formData.username)
+       axios.get('https://api.github.com/users/'+this.state.formData.username)
     .then(response => this.setState({
       gitun: response.data.login,
-      info : JSON.stringify(response.data, undefined, 2)
+      infoclean: response.data,
     })).catch((err) => { console.log(err); });
   };
 handleFormChange(event) {
@@ -31,20 +32,20 @@ render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">GitHub Analytics</h1>
+          <h1 className="App-title">GitHub Data</h1>
         </header>
         <p className="App-intro">
-          Watch this space...
+          Here is what I found
         </p>
+        <hr></hr>
         <Form
           formData={this.state.formData}
           handleUserFormSubmit={this.handleUserFormSubmit}
           handleFormChange={this.handleFormChange}
         />
-        <p><b>Username:</b></p>
-        <p>{this.state.gitun}</p>
-        <b>Information:</b>
-        <pre>{this.state.info}</pre>
+        <hr></hr>
+        Profile Details:
+        <ProfileDetails infoclean={this.state.infoclean}/>
 </div>
     );
   }
