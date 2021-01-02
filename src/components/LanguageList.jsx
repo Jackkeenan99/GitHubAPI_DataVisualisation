@@ -15,7 +15,7 @@ const LanguageList = (props) => {
                         Object.entries(props.langslist).map(([key, value]) =>
 
                                 <div key={key}>
-                                    {key}  -  {Math.round(100 * value / totalcount)}%
+                                    {key} {Math.round(100 * value / totalcount)}%
 
                                 {console.log(x = x + value + ',')}
 
@@ -27,7 +27,7 @@ const LanguageList = (props) => {
                 </div>
                 <div>
                     <div className="text-left">
-                        <PieChart repoSize={x.split(',')} repoNames={langs.split(',')} />
+                        <PieChart repoSize={x.split(',')} repoNames={langs.split(',')}  />
                         </div>
                         {x = ''}
                         {langs = ''}
