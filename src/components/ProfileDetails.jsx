@@ -7,6 +7,7 @@ const imgStye = {
   height: "150px"
 };
 const ProfileDetails = (props) => {
+  if(props.infoclean){
     return (
       <div>
         <div>
@@ -29,13 +30,14 @@ const ProfileDetails = (props) => {
           {props.infoclean.public_repos ? <div><p>Public Repos: {props.infoclean.public_repos}</p></div> : <p> Repos: 0</p>}
         </div>
         <div>
-          {props.infoclean.followers ? <div><p>Followers: {props.infoclean.followers}</p></div> : <p> Following: 0</p> }
+          {props.infoclean.followers ? <div><p>Followers: {props.infoclean.followers}</p></div> : <p> Followers: 0</p> }
         </div>
         <div>
-          {props.infoclean.following ? <div><p>Following: {props.infoclean.following}</p></div> : <p> Followers: 0</p> }
+          {props.infoclean.following ? <div><p>Following: {props.infoclean.following}</p></div> : <p> Following: 0</p> }
         </div>
       </div>
 
-    )
+    )}
+    else{return null};
 };
 export default ProfileDetails;

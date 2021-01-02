@@ -24,6 +24,7 @@ const SortedList = (props) => {
             )}
 
             <ScatterPlot  y={watchers.split(',')} repo={repo.split(',')} label={'Watchers of repos'} />
+            <BubbleChart  y={forks.split(',')} repo={repo.split(',')} size={size.split(',')} label={'Forks of repos'} />
             {watchers = ''}
             {repo = ''}
             {forks = ''}

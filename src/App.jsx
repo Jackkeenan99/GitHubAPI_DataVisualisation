@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Form from './components/Form.jsx';
 import SortedList from './components/SortedList.jsx';
+import SortedListStarred from './components/SortedListStarred.jsx';
 import ProfileDetails from './components/ProfileDetails.jsx';
 import LanguageList from './components/LanguageList.jsx';
 import lda from './lda';
@@ -111,19 +112,18 @@ render() {
           handleUserFormSubmit={this.handleUserFormSubmit}
           handleFormChange={this.handleFormChange}
           />
-
-
         <hr></hr>
         Profile Details:
         <ProfileDetails infoclean={this.state.infoclean}/>
         <hr></hr>
         Own Repositories:
         <SortedList repitems={this.state.repitems}/>
-        <h2>Owner Repos Language Count</h2>
+        <hr></hr>
+        <h4>Owner Repos Language Count</h4>
         <LanguageList langslist={this.state.replanguagecount}/>
         <hr></hr>
         Starred Repositories:
-        <SortedList repitems={this.state.staritems}/>
+        <SortedListStarred repitems={this.state.staritems}/>
         <hr></hr>
 
       </div>

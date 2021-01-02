@@ -11,7 +11,7 @@ const ScatterPlot = (props) => {
                       y: props.y,
                       type: 'scatter',
                       mode: 'lines+markers',
-                      marker: { color: '#D0B0D0' },
+                      marker: { color: '#DDDDD' },
                   }
                 ]}
                 layout={{width: 800, height: 400, title: props.label }}
