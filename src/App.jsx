@@ -99,17 +99,20 @@ render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">GitHub Analytics</h1>
+          <h1 className="App-title">GitHub Data Visualisation</h1>
         </header>
         <p className="App-intro">
-          Watch this space...
+          Search a user and visualise their GitHub account
         </p>
         <hr></hr>
+
         <Form
           formData={this.state.formData}
           handleUserFormSubmit={this.handleUserFormSubmit}
           handleFormChange={this.handleFormChange}
-        />
+          />
+
+
         <hr></hr>
         Profile Details:
         <ProfileDetails infoclean={this.state.infoclean}/>
