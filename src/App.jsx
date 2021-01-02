@@ -30,6 +30,8 @@ handleUserFormSubmit(event) {
       infoclean: response.data,
       info : JSON.stringify(response.data, undefined, 2)
     })).catch((err) => { console.log(err); });
+
+
 axios.get('https://api.github.com/users/'+this.state.formData.username+'/repos')
     .then(response => {
 var itemsWithFalseForks = response.data.filter(item => item.fork === false)
@@ -51,6 +53,8 @@ this.setState({
         replanguagecount: dictrlc,
       })
 }).catch((err) => { console.log(err); })
+
+
 axios.get('https://api.github.com/users/'+this.state.formData.username+'/starred')
     .then(response => {
 var itemsWithFalseForks = response.data.filter(item => item.fork === false)
@@ -112,12 +116,13 @@ render() {
         <hr></hr>
         Own Repositories:
         <SortedList repitems={this.state.repitems}/>
+        <h2>Owner Repos Language Count</h2>
+        <LanguageList langslist={this.state.replanguagecount}/>
         <hr></hr>
         Starred Repositories:
         <SortedList repitems={this.state.staritems}/>
         <hr></hr>
-        Own Repos Language Count:
-        <LanguageList langslist={this.state.replanguagecount}/>
+
       </div>
     );
   }
