@@ -13,7 +13,7 @@ const BubbleChart = (props) => {
                   marker: { size: props.size},
                 }
             ]}
-               layout = {{ title: 'Marker Size', showlegend: false,  height: 600, width: 600 }}
+               layout = {{ title: 'Forks on Repositories', showlegend: false,  height: 600, width: 1000 }}
 
               />
           );

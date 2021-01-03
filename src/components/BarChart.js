@@ -14,7 +14,7 @@ const BarChart = (props) => {
                       marker: { color: '#D0B0D0' },
                   }
                 ]}
-                layout={{width: 800, height: 400, title: props.label }}
+                layout={{width: 1000, height: 400, title: props.label }}
             />
         );
 

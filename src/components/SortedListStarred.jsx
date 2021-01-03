@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'react-moment';
 import ScatterPlot from './ScatterPlot';
 import BubbleChart from './BubbleChart';
+import HorizontalBarChart from './HorizontalBarChart';
 let repo = ''
 let watchers = '';
 let forks = '';
@@ -27,7 +28,7 @@ const SortedList = (props) => {
               </div>
             )}
 
-            <ScatterPlot  y={watchers.split(',')} repo={repo.split(',')} label={'Watchers of repos'} />
+            <HorizontalBarChart  watchers={watchers.split(',')} repo={repo.split(',')} label={'Watchers of repos'} />
             <BubbleChart  y={forks.split(',')} repo={repo.split(',')} size={size.split(',')} label={'Forks of repos'} />
             {watchers = ''}
             {repo = ''}

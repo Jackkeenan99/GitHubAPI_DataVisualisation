@@ -8,6 +8,7 @@ import LanguageList from './components/LanguageList.jsx';
 import lda from './lda';
 
 import { Alert, Container } from 'react-bootstrap';
+import {Helmet} from 'react-helmet';
 
 class App extends Component {
   constructor() {
@@ -111,6 +112,9 @@ render() {
     return(
     <Container className="container">
       <div className="App">
+      <Helmet>
+                <style>{'body { background-color: #D88674; }'}</style>
+        </Helmet>
         <header className="App-header">
           <h1 className="App-title" className="text-center">GitHub Data Visualisation</h1>
         </header>

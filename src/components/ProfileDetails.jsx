@@ -22,9 +22,6 @@ const ProfileDetails = (props) => {
         <div>
           {props.infoclean.bio ? <div><p>Bio: {props.infoclean.bio}</p></div> : null }
         </div>
-        <div>
-          {props.infoclean.following ? <div><p>Following: {props.infoclean.following}</p></div> : null }
-        </div>
         <BarChart repoNames={['Repos', 'Followers', 'Following']} watchers_count={[props.infoclean.public_repos, props.infoclean.followers, props.infoclean.following]}  label={'User Statistics Bar Chart'} />
         <div>
           {props.infoclean.public_repos ? <div><p>Public Repos: {props.infoclean.public_repos}</p></div> : <p> Repos: 0</p>}

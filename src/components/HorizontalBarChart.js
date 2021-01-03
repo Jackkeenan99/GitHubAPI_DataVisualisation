@@ -1,17 +1,17 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-const ScatterPlot = (props) => {
+const HorizontalBarChart = (props) => {
         return (
             <Plot
                 data={[
 
                   {
-                      x: props.repo,
-                      y: props.y,
-                      type: 'scatter',
-                      mode: 'lines+markers',
-                      marker: { color: '#DDDDD' },
+                      y: props.repo,
+                      x: props.watchers,
+                      type: 'bar',
+                      orientation: 'h',
+                      marker: { color: '#YCD0D0' },
                   }
                 ]}
                 layout={{width: 1000, height: 400, title: props.label }}
@@ -19,4 +19,4 @@ const ScatterPlot = (props) => {
         );
 
 }
-export default ScatterPlot;
+export default HorizontalBarChart;
