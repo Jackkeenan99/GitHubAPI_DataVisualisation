@@ -6,13 +6,16 @@ import SortedListStarred from './components/SortedListStarred.jsx';
 import ProfileDetails from './components/ProfileDetails.jsx';
 import LanguageList from './components/LanguageList.jsx';
 import lda from './lda';
+
+import { Alert, Container } from 'react-bootstrap';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       gitun: 'No username',
       infoclean : '',
-      info: '',
+      info: null,
       formData: {
         username: '',
       },
@@ -24,6 +27,8 @@ class App extends Component {
     this.handleFormChange= this.handleFormChange.bind(this);
   }
 handleUserFormSubmit(event) {
+    this.state.staritems = null;
+    this.state.replanguagecount = null;
     event.preventDefault();
     axios.get('https://api.github.com/users/'+this.state.formData.username)
     .then(response => this.setState({
@@ -91,42 +96,52 @@ this.setState({
       })
 }).catch((err) => { console.log(err); })
 };
+
+
+
 handleFormChange(event) {
     const obj = this.state.formData;
     obj[event.target.name] = event.target.value;
     this.setState(obj);
   };
+
+
+
 render() {
-    return (
+    return(
+    <Container className="container">
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">GitHub Data Visualisation</h1>
+          <h1 className="App-title" className="text-center">GitHub Data Visualisation</h1>
         </header>
-        <p className="App-intro">
-          Search a user and visualise their GitHub account
-        </p>
         <hr></hr>
-
         <Form
           formData={this.state.formData}
           handleUserFormSubmit={this.handleUserFormSubmit}
           handleFormChange={this.handleFormChange}
           />
-        <hr></hr>
-        Profile Details:
-        <ProfileDetails infoclean={this.state.infoclean}/>
-        <hr></hr>
-        Own Repositories:
-        <SortedList repitems={this.state.repitems}/>
-        <hr></hr>
-        <h4>Owner Repos Language Count</h4>
-        <LanguageList langslist={this.state.replanguagecount}/>
-        <hr></hr>
-        Starred Repositories:
-        <SortedListStarred repitems={this.state.staritems}/>
-        <hr></hr>
 
-      </div>
+        {
+           this.state.info != null ? <div>
+             Profile Details:
+             <ProfileDetails infoclean={this.state.infoclean}/>
+             <hr></hr>
+             Own Repositories:
+             <SortedList repitems={this.state.repitems}/>
+             <hr></hr>
+             Starred Repositories:
+             <SortedListStarred rep={this.state.staritems}/>
+             <hr></hr>
+             <b>Own Repos Language Count:</b>
+             <LanguageList langslist={this.state.replanguagecount}/>
+             {/* <hr></hr>
+             <b>Information:</b>
+             <pre>{this.state.info}</pre> */}
+             </div>
+           : <h4 className="text-center"><br/><br/><br/><br/>Please enter username above for results to appear</h4>
+         }
+       </div>
+       </Container>
     );
   }
 }

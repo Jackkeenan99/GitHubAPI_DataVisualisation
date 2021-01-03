@@ -9,17 +9,21 @@ let size = '';
 
 const SortedList = (props) => {
 
-  if (props.repitems) {
+  if (props.rep) {
 
     return (
       <div>
+        {watchers = ''}
+        {repo = ''}
+        {forks = ''}
+        {size = ''}
           {
-              props.repitems.map((repitem) =>
+              props.rep.map((r) =>
                 <div>
-                  {console.log(repo = repo + repitem.name + ',')}
-                  { console.log(watchers = watchers + repitem.watchers_count + ',') }
-                  { console.log(forks = forks + repitem.forks_count + ',') }
-                  { console.log(size = size + repitem.forks_count/10 + ',') }
+                  {console.log(repo = repo + r.name + ',')}
+                  { console.log(watchers = watchers + r.watchers_count + ',') }
+                  { console.log(forks = forks + r.forks_count + ',') }
+                  { console.log(size = size + r.forks_count/10 + ',') }
               </div>
             )}
 
@@ -28,6 +32,7 @@ const SortedList = (props) => {
             {watchers = ''}
             {repo = ''}
             {forks = ''}
+            {size = ''}
             </div>
 
 

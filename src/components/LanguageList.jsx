@@ -35,7 +35,7 @@ const LanguageList = (props) => {
                 </div>
             </div>
         )
-    } else { return null; }
+    } else { return null};
 
 };
 
