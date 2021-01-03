@@ -6,6 +6,7 @@ let repo = ''
 let watchers = '';
 let forks = '';
 let size = '';
+let repoSize = '';
 
 const SortedList = (props) => {
 
@@ -20,6 +21,7 @@ const SortedList = (props) => {
                   { console.log(watchers = watchers + repitem.watchers_count + ',') }
                   { console.log(forks = forks + repitem.forks_count + ',') }
                   { console.log(size = size + repitem.forks_count/10 + ',') }
+                  { console.log(repoSize = repoSize + repitem.size + ',') }
               </div>
             )}
 
@@ -27,6 +29,7 @@ const SortedList = (props) => {
             {watchers = ''}
             {repo = ''}
             {forks = ''}
+            {repoSize = ''}
             </div>
 
 
