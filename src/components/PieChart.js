@@ -12,7 +12,7 @@ const PieChart = (props) => {
                 type: 'pie'
             }
         ]}
-            layout={{ width: 1000, height: 500 }}
+            layout={{ width: 1000, height: 500, title:props.label}}
         />
         </div>
     );

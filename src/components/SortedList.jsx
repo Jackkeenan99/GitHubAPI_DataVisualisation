@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'react-moment';
 import ScatterPlot from './ScatterPlot';
 import BubbleChart from './BubbleChart';
+import PieChart from './PieChart';
 let repo = ''
 let watchers = '';
 let forks = '';
@@ -26,6 +27,7 @@ const SortedList = (props) => {
             )}
 
             <ScatterPlot  y={watchers.split(',')} repo={repo.split(',')} label={'Watchers of repos'} />
+            <PieChart repoSize={repoSize.split(',')} repoNames={repo.split(',')} label={'Size of repos'} />
             {watchers = ''}
             {repo = ''}
             {forks = ''}
